@@ -2,21 +2,7 @@ name = "backend"
 compatibility_date = "2024-09-08"
 # compatibility_flags = [ "nodejs_compat" ]
 
-# [vars]
-# MY_VAR = "my-variable"
-
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-
-# [[r2_buckets]]
-# binding = "MY_BUCKET"
-# bucket_name = "my-bucket"
-
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "my-database"
-# database_id = ""
-
-# [ai]
-# binding = "AI"
+[vars]
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMjQzOGYzZjktZmU0MS00Y2ZjLWI2YmQtOTY1OTk5NzNmZWRiIiwidGVuYW50X2lkIjoiMDg5ZTlmYWUzYTZhNzY3ODUyZTQ2ZDA5OTRhMjg2NGZiZDA4OWI0YjY4ZGQ5NDc2Njc4ZGIwOGY0NDE4OTFkYyIsImludGVybmFsX3NlY3JldCI6ImI3MGM2ZjBhLWJjY2YtNDYwMC1hY2I5LWMxZGQyZDAyYTU2MiJ9.KAOZ1xJIitVJUuQKXXlLaUn0P0Mbaac2Kom1nmymdxk"
+DIRECT_URL="postgresql://neondb_owner:NFYo8mVXD2qk@ep-red-moon-a5x2vfdt.us-east-2.aws.neon.tech/neondb?sslmode=require"
+JWT_SECRET="secret"

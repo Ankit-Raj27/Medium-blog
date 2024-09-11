@@ -82,7 +82,18 @@ blogRouter.put("/", async (c) => {
 // Todo : pagination
 blogRouter.get("/bulk", async (c) => {
   const prisma = c.get("prisma");
-  const blogs = await prisma.blog.findMany();
+  const blogs = await prisma.blog.findMany({
+    select:{
+      content:true,
+      title:true,
+      id:true,
+      author:{
+        select:{
+          name:true
+        }
+      }
+    }
+  });
 
   return c.json({ blogs });
 });
@@ -94,8 +105,17 @@ blogRouter.get("/:id", async (c) => {
       where: {
         id: Number(id),
       },
+      select:{
+        title:true,
+        content:true,
+        author:{
+          select:{
+            name:true
+          }
+        }
+      }
     });
-    return c.json(blog);
+    return c.json({blog});
   } catch (e) {
     c.status(411);
     return c.json({
